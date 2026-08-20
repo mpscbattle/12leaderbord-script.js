@@ -24,17 +24,17 @@ let timer = 1500; // 25 Minutes = 1500 Seconds
 let timerInterval; 
 const questions = [];
 
-// --- 1. HTML से प्रश्न लोड करना ---
 function loadQuestionsFromHTML() {
-    questions.length = 0; // Clear array
+    questions.length = 0; 
     document.querySelectorAll(".question-data").forEach(qEl => {
-        const q = qEl.querySelector(".q").innerText;
-        const opts = Array.from(qEl.querySelectorAll(".opt")).map(el => el.innerText);
+        const q = qEl.querySelector(".q").innerHTML; // <-- innerHTML use karein
+        const opts = Array.from(qEl.querySelectorAll(".opt")).map(el => el.innerHTML); // Options ke formatting ke liye innerHTML
         const ans = parseInt(qEl.getAttribute("data-answer"));
         const explanation = qEl.getAttribute("data-explanation") || "";
         questions.push({ question: q, options: opts, answer : ans, explanation: explanation });
     });
 }
+
 
 // --- 2. प्रश्न रेंडर करना ---
 function renderAllQuestions() {
