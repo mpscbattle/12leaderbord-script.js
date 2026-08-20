@@ -64,7 +64,7 @@ window.selectAnswer = function(qIndex, aIndex) {
     renderAllQuestions(); 
 };
 
-// --- 3. 01:00:00 फॉर्मेट वाला टाइमर ---
+// --- 3. 25:00 फॉर्मेट वाला टाइमर ---
 function updateTimer() {
     let hours = Math.floor(timer / 1500);
     let minutes = Math.floor((timer % 1500) / 60);
